@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import NotificationButton from "./NotificationButton";
+import { useBookings } from "../context/BookingContext";
 
 export default function Navbar() {
+  const { bookings } = useBookings();
+
     const linkClass = ({ isActive }) =>
         isActive
             ? "font-semibold text-leaf underline underline-offset-4"
@@ -37,7 +40,12 @@ export default function Navbar() {
                     <NavLink to="/products" className={linkClass}>Products</NavLink>
                     <NavLink to="/workshops" className={linkClass}>Workshops</NavLink>
                     <NavLink to="/events" className={linkClass}>Events</NavLink>
-                    <NavLink to="/booking" className={linkClass}>Booking</NavLink>
+                    <NavLink to="/booking" className={linkClass}>Booking
+                    {bookings.length > 0 && (
+                        <span className="ml-1 font-semibold">
+                        ({bookings.length})
+                        </span>
+                    )}</NavLink>
                     <NavLink to="/admin" className={linkClass}>Admin</NavLink>
                 </div>
                 <NotificationButton />
