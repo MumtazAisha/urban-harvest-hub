@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Urban Gardening Workshop",
+    "category": "Education",
+    "type": "Workshop",
+    "price": 2500,
+    "availability": "Available",
+    "description": "Learn sustainable urban gardening techniques."
+  },
+  {
+    "id": 2,
+    "title": "Eco Living Starter Kit",
+    "category": "Lifestyle",
+    "type": "Product",
+    "price": 4500,
+    "availability": "In Stock",
+    "description": "A collection of eco-friendly products."
+  },
+  {
+    "id": 3,
+    "title": "Community Composting Event",
+    "category": "Food",
+    "type": "Event",
+    "price": 0,
+    "availability": "Open Registration",
+    "description": "Join our community composting initiative."
+  },
+  {
+    "id": 4,
+    "title": "Balcony Herb Kit",
+    "category": "Food",
+    "type": "Product",
+    "price": 8800,
+    "availability": "In Stock",
+    "description": "Grow fresh herbs at home using organic seeds and compostable materials."
+  },
+  {
+    "id": 5,
+    "title": "Reusable Kitchen Set",
+    "category": "Lifestyle",
+    "type": "Product",
+    "price": 3200,
+    "availability": "In Stock",
+    "description": "Reusable kitchen essentials to reduce single-use plastic waste."
+  },
+  {
+    "id": 6,
+    "title": "Composting Basics Workshop",
+    "category": "Education",
+    "type": "Workshop",
+    "price": 1800,
+    "availability": "Available",
+    "description": "A beginner-friendly workshop on composting at home."
+  },
+  {
+    "id": 7,
+    "title": "Zero Waste Market Day",
+    "category": "Lifestyle",
+    "type": "Event",
+    "price": 500,
+    "availability": "Open Registration",
+    "description": "A community event featuring sustainable brands and zero-waste ideas."
+  }
+]

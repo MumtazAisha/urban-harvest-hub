@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-leaf: #2D5A27;
+  --color-earth: #6A4F42;
+  --color-cream: #EDF5EC;
+  --color-sage: #E4EBE0;
+  --font-heading: "Merriweather", serif;
+  --font-body: "Inter", sans-serif; 
+}
+
+
+@layer base {
+  body {
+  @apply text-earth dark:bg-slate-950 dark:text-slate-100;
+  background-color: var(--color-sage);
+}
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .eco-card {
+    @apply rounded-3xl bg-white p-8 shadow-sm border border-earth/10 transition-all duration-300 hover:shadow-md hover:-translate-y-1 dark:bg-slate-900 dark:border-white/5;
+  }
+
+  .eco-button {
+    @apply inline-block w-full max-w-xs text-center border-none rounded-full bg-leaf text-white font-semibold py-3 px-6 cursor-pointer transition-all duration-200 hover:bg-leaf/90 active:scale-98;
+  }
+
+  .eco-input {
+    @apply w-full border border-earth/20 rounded-full bg-[#e2efe0]/50 py-3 px-6 text-earth outline-none transition-all duration-200 focus:border-leaf focus:ring-2 focus:ring-leaf/20 dark:bg-slate-800 dark:border-white/10 dark:text-white dark:focus:border-white;
+  }
+}
+
+.admin-page {
+  min-height: 100vh;
+  background: #7eb870;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  border-radius: 50px;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #26352b;
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.admin-header p {
+  max-width: 560px;
+  margin: 0.75rem auto 0;
+  color: #303330;
+}
+
+
+.form-card {
+  width: 300%;
+  max-width: 600px;
+  background: #f7f7f1;
+  border-radius: 2.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 12px 35px rgba(62, 82, 65, 0.15);
+}
+
+.form-card label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form-card label span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #26352b;
+  font-weight: 500;
+}
+
+.soft-input,
+.soft-select {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  background: #d7e0d3;
+  color: #26352b;
+  padding: 1rem 1.35rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.soft-input:focus,
+.soft-select:focus {
+  box-shadow: 0 0 0 3px rgba(111, 147, 111, 0.28);
+}
+
+.soft-input::placeholder {
+  color: #6f7a70;
+}
+
+.soft-textarea {
+  border-radius: 1.5rem;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-button {
+  width: 100%;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: #6f936f;
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background: #5f835f;
+}
+
+.form-error {
+  margin-top: 0.35rem;
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+.form-success {
+  margin-top: 1.25rem;
+  border-radius: 1rem;
+  background: #d7e0d3;
+  padding: 0.9rem;
+  text-align: center;
+  color: #26352b;
+  font-weight: 600;
+}
+
+.form-title{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #26352b;
+}
+ 
