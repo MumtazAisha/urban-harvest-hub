@@ -1,4 +1,4 @@
-1. FEATURES
+### FEATURES
 
 --User Features
 Browse eco-friendly products
@@ -23,7 +23,7 @@ Service worker caching
 Web App Manifest
 Push notifications
 
-2. TECHNOLOGIES USED
+### TECHNOLOGIES USED
 
 --Frontend
 React
@@ -42,26 +42,40 @@ Web App Manifest
 Push Notifications
 Local Storage
 
-3. BACKEND SETUP 
+###  BACKEND SETUP 
+
+```bash
 cd server
 npm install
 npm run seed
 npm run dev
+```
 
 Backend runs on:
 http://localhost:5000 
 
-4. FRONTEND SETUP
+### FRONTEND SETUP
+
+```bash
 cd client
 npm install
 npm run dev 
+```
 
 Frontend runs on:
 http://localhost:5173
 
-5. ACCESSIBILITY
+###  ACCESSIBILITY
 Semantic HTML
 ARIA labels
 Responsive layouts
 
+### SQLite Database Note
 
+This project uses SQLite for database integration. The SQLite database file is included inside the `server/database` folder for local testing.
+
+When running the project for the first time, use:
+
+```bash
+cd server
+npm run seed
