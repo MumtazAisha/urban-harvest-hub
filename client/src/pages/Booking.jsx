@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useBookings } from "../context/BookingContext";
 
 export default function Booking() {
-  const { bookings, removeBooking } = useBookings();
+  const { bookings, removeBooking, increaseQuantity, decreaseQuantity } =
+  useBookings();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -87,7 +88,7 @@ export default function Booking() {
 
         <button
           type="button"
-          onClick={() => removeBooking(booking.id)}
+          onClick={() => removeBooking(booking.id, booking.type)}
           aria-label={`Remove ${booking.title} from bookings`}
           className="rounded-full border border-red-500 px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-50"
         >
