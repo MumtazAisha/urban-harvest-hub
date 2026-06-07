@@ -64,27 +64,48 @@ export default function Booking() {
           No bookings yet. Select an event, workshop, or product to register.
         </p>
       ) : (
-        <div className="mb-8 grid w-full gap-4 md:grid-cols-2">
-          {bookings.map((booking) => (
-            <article key={booking.id} className="eco-card">
-              <h2 className="text-xl font-bold text-earth">{booking.title}</h2>
-              <p className="text-earth/80">{booking.type}</p>
-              <p className="text-earth/80">{booking.category}</p>
-              <p className="font-semibold text-earth">
-                {booking.price === 0 ? "Free" : `Rs. ${booking.price}`}
-              </p>
+        <div className="mb-8 w-full max-w-4xl rounded-3xl bg-white p-6 shadow-md">
+  {bookings.map((booking) => (
+    <div
+      key={booking.id}
+      className="border-b border-earth/20 py-4 last:border-b-0"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h2 className="text-xl font-bold text-earth">
+            {booking.title}
+          </h2>
 
-              <button
-                type="button"
-                onClick={() => removeBooking(booking.id)}
-                aria-label={`Remove ${booking.title} from bookings`}
-                className="mt-3 rounded-lg border border-red-500 px-3 py-2 text-red-600 transition hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-              >
-                Remove
-              </button>
-            </article>
-          ))}
+          <p className="text-earth/70">
+            {booking.type}
+          </p>
+
+          <p className="mt-2 font-bold text-earth">
+            {booking.price === 0 ? "Free" : `Rs. ${booking.price}`}
+          </p>
         </div>
+
+        <button
+          type="button"
+          onClick={() => removeBooking(booking.id)}
+          aria-label={`Remove ${booking.title} from bookings`}
+          className="rounded-full border border-red-500 px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-50"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  ))}
+
+  <div className="mt-6 flex items-center justify-between border-t border-earth/30 pt-4">
+    <p className="text-xl font-bold text-earth">TOTAL</p>
+
+    <p className="text-xl font-bold text-earth">
+      Rs.{" "}
+      {bookings.reduce((total, item) => total + Number(item.price), 0)}
+    </p>
+  </div>
+</div>
       )}
     {bookings.length > 0 && (
       <form
