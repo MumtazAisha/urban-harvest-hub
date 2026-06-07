@@ -26,12 +26,12 @@ export async function getItemByType(type, id) {
 
   const endpoint = endpointMap[type];
 
-  const response = await fetch(`${API_BASE_URL}/${endpoint}/${id}`);
+  const response = await fetch(`${API_URL}/${endpoint}/${id}`);
   return response.json();
 }
 
 export async function createProduct(product) {
-  const response = await fetch(`${API_BASE_URL}/products`, {
+  const response = await fetch(`${API_URL}/products`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export async function createProduct(product) {
 }
 
 export async function createEvent(event) {
-  const response = await fetch(`${API_BASE_URL}/events`, {
+  const response = await fetch(`${API_URL}/events`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -55,7 +55,7 @@ export async function createEvent(event) {
 }
 
 export async function createWorkshop(workshop) {
-  const response = await fetch(`${API_BASE_URL}/workshops`, {
+  const response = await fetch(`${API_URL}/workshops`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
