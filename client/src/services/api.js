@@ -1,19 +1,19 @@
-const API_BASE_URL =
+const API_URL =
   import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 
 export async function getProducts() {
-  const response = await fetch(`${API_BASE_URL}/products`);
+  const response = await fetch(`${API_URL}/products`);
   return response.json();
 }
 
 export async function getEvents() {
-  const response = await fetch(`${API_BASE_URL}/events`);
+  const response = await fetch(`${API_URL}/events`);
   return response.json();
 }
 
 export async function getWorkshops() {
-  const response = await fetch(`${API_BASE_URL}/workshops`);
+  const response = await fetch(`${API_URL}/workshops`);
   return response.json();
 }
 
