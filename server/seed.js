@@ -112,7 +112,4 @@ insertItems("products", products);
 insertItems("workshops", workshops);
 insertItems("events", events);
 
-setTimeout(() => {
-  console.log("Database seeding complete.");
-  db.close();
-}, 1000);
+console.log("Database seeding complete.");
