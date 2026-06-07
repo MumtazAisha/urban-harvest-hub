@@ -39,7 +39,7 @@ export default function ItemDetails() {
   function handleBooking() {
     addBooking(item);
     setSuccessMessage("Added to bookings");
-  }
+  } 
 
   return (
     <section className="eco-card max-w-3xl mx-auto">
