@@ -38,7 +38,7 @@ export default function ItemDetails() {
 
   function handleBooking() {
     addBooking(item);
-    navigate("/booking");
+    setSuccessMessage("Added to bookings");
   }
 
   return (
