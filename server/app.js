@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 require("./database/db");
+require("./seed");
 
 const productsRoutes = require("./routes/products");
 const eventsRoutes = require("./routes/events");
