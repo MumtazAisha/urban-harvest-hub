@@ -133,12 +133,14 @@ const [passwordError, setPasswordError] = useState("");
 }
 
   return (
-    <section className="admin-page">
-      <div className="admin-header">
+  <section className="admin-page px-4 py-10">
+    <div className="mx-auto w-full max-w-md text-center">
+      <div className="mb-8 rounded-t-[2rem] bg-[#8fbe7f] px-5 py-10">
+        <h1 className="text-3xl font-bold text-earth">
+          Admin Content Manager
+        </h1>
 
-        <h1>Admin Content Manager</h1>
-
-        <p>
+        <p className="mx-auto mt-3 max-w-sm text-earth/80">
           Add sustainable products, workshops, and community events to the
           Urban Harvest Hub platform.
         </p>
@@ -146,7 +148,7 @@ const [passwordError, setPasswordError] = useState("");
 
       <form
         onSubmit={handleSubmit}
-        className="form-card"
+        className="w-full rounded-[2rem] bg-[#f7f7f1] p-6 shadow-md"
         aria-label="Admin content manager"
       >
         <label>
@@ -155,7 +157,7 @@ const [passwordError, setPasswordError] = useState("");
             name="type"
             value={formData.type}
             onChange={handleChange}
-            className="soft-select"
+            className="soft-input"
           >
             <option value="Product">Product</option>
             <option value="Event">Event</option>
@@ -170,7 +172,7 @@ const [passwordError, setPasswordError] = useState("");
             name="title"
             value={formData.title}
             onChange={handleChange}
-            className="soft-input"
+            className="soft-input soft-textarea"
             aria-invalid={errors.title ? "true" : "false"}
           />
           {errors.title && <p className="form-error">{errors.title}</p>}
@@ -182,7 +184,7 @@ const [passwordError, setPasswordError] = useState("");
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="soft-select"
+            className="soft-input"
           >
             <option value="">Select category</option>
             <option value="Food">Food</option>
@@ -226,7 +228,7 @@ const [passwordError, setPasswordError] = useState("");
             name="availability"
             value={formData.availability}
             onChange={handleChange}
-            className="soft-select"
+            className="soft-input"
           >
             <option value="">Select availability</option>
             <option value="In Stock">In Stock</option>
@@ -246,7 +248,7 @@ const [passwordError, setPasswordError] = useState("");
             placeholder="example.jpg"
             value={formData.image}
             onChange={handleChange}
-            className="soft-input"
+            className="soft-input soft-textarea"
           />
         </label>
 
@@ -259,7 +261,8 @@ const [passwordError, setPasswordError] = useState("");
             {message}
           </div>
         )}
-      </form>
-    </section>
-  );
+            </form>
+    </div>
+  </section>
+);
 }
