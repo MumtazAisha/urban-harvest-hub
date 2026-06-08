@@ -133,8 +133,8 @@ const [passwordError, setPasswordError] = useState("");
 }
 
   return (
-  <section className="admin-page px-4 py-10">
-    <div className="mx-auto w-full max-w-md text-center">
+  <section className="admin-page px-2 py-10">
+  <div className="mx-auto w-full max-w-2xl text-center">
       <div className="mb-8 rounded-t-[2rem] bg-[#8fbe7f] px-5 py-10">
         <h1 className="text-3xl font-bold text-earth">
           Admin Content Manager
