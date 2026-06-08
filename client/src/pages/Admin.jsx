@@ -148,7 +148,7 @@ const [passwordError, setPasswordError] = useState("");
 
       <form
         onSubmit={handleSubmit}
-        className="w-full rounded-[2rem] bg-[#f7f7f1] p-6 shadow-md"
+        className="form-card"
         aria-label="Admin content manager"
       >
         <label>

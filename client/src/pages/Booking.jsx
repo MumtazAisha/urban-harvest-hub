@@ -53,7 +53,7 @@ export default function Booking() {
   }
 
   return (
-    <section className="mx-auto min-h-screen w-full max-w-6xl rounded-[2rem] bg-[#7eb870] px-4 py-10 sm:px-6 md:rounded-[3rem] md:px-10">
+    <section className="mx-auto min-h-screen w-full max-w-6xl overflow-hidden rounded-[2rem] bg-[#7eb870] px-3 py-10 sm:px-6 md:rounded-[3rem] md:px-10">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-earth dark:text-white">
           Your Bookings
@@ -152,7 +152,7 @@ export default function Booking() {
 
           <form
             onSubmit={handleSubmit}
-            className="form-card w-full"
+            className="form-card"
             aria-label="Booking request form"
           >
             <h2 className="form-title">Complete Booking</h2>
