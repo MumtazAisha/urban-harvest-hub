@@ -89,42 +89,45 @@ const [passwordError, setPasswordError] = useState("");
 
   if (!isAdminUnlocked) {
   return (
-    <section className="admin-page">
-      <div className="admin-header">
-        <h1>Admin Login</h1>
-        <p>Enter the admin password to manage platform content.</p>
+    <section className="admin-page px-4 py-10">
+      <div className="mx-auto flex min-h-[620px] w-full max-w-md flex-col items-center justify-center rounded-[2rem] bg-[#8fbe7f] px-5 py-10 text-center shadow-md">
+        <div className="admin-header mb-8">
+          <h1>Admin Login</h1>
+          <p>Enter the admin password to manage platform content.</p>
+        </div>
+
+        <form
+          className="w-full max-w-sm rounded-3xl bg-[#f7f7f1] p-6 shadow-md"
+          onSubmit={(e) => {
+            e.preventDefault();
+
+            if (password === "admin123") {
+              localStorage.setItem("adminUnlocked", "true");
+              setIsAdminUnlocked(true);
+              setPasswordError("");
+            } else {
+              setPasswordError("Incorrect password.");
+            }
+          }}
+        >
+          <label>
+            <span>Password</span>
+            <input
+              type="password"
+              className="soft-input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter admin password"
+            />
+          </label>
+
+          {passwordError && <p className="form-error">{passwordError}</p>}
+
+          <button type="submit" className="form-button">
+            Unlock Admin
+          </button>
+        </form>
       </div>
-
-      <form
-        className="form-card"
-        onSubmit={(e) => {
-          e.preventDefault();
-
-          if (password === "admin123") {
-            localStorage.setItem("adminUnlocked", "true");
-            setIsAdminUnlocked(true);
-            setPasswordError("");
-          } else {
-            setPasswordError("Incorrect password.");
-          }
-        }}
-      >
-        <label>
-          <span>Password</span>
-          <input
-            type="password"
-            className="soft-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-
-        {passwordError && <p className="form-error">{passwordError}</p>}
-
-        <button type="submit" className="form-button">
-          Unlock Admin
-        </button>
-      </form>
     </section>
   );
 }
